@@ -15,87 +15,93 @@ abstract class Animal {
     public function Manger(){
         $this->energieChat += 20;
         $this->energieChien += 20;
-        echo $this->manger;
+        echo $this->manger.'<br>';
     }
     public function dormir(){
         $this->energieChat = 100;
         $this->energieChien= 100;
-        echo $this->dormir;
+        echo $this->dormir.'<br>';
     }
     public function Courir(){
         $this->energieChat -= 40;
         $this->energieChien -= 40;
-        echo $this->courir;
+        echo $this->courir.'<br>';
     }
 }
 
 class chat extends Animal{
-    private $miauler="MIIIAAAAooouuuuuu!!";
-    private $ronronner="ROoonnnnROOONnnnn";
+    public $miauler="MIIIAAAAooouuuuuu!!";
+    public $ronronner="ROoonnnnROOONnnnn";
 
     //class animal abstrait
-    function miauler($miauler){
-        echo $miauler;
+    function miauler(){
+        echo $this->miauler.'<br>';
         $this->energieChat -= 40;
         if($this->energieChat<=0)
         {
-            echo'<br>'.$this->dormir;
+            echo "Énergie= 0<br>";
             $this->dormir();
-            echo $this->energieChat;
         }
+        echo "Énergie= ".$this->energieChat.'<br>';
     }
     function ronronner($ronronner){
-        echo $ronronner;
+        echo $ronronner.'<br>';
         $this->energieChat -= 40;
         if($this->energieChat<=0)
         {
-            echo'<br>'.$this->dormir;
+            echo "Énergie= 0<br>";
             $this->dormir();
-            echo $this->energieChat;
         }
+        echo "Énergie= ".$this->energieChat.'<br>';
     }
 
 }
 
 class chien extends Animal{
-    private $japper="WWoooooouuuuAAAAFFF";
-    private $Grognier="GRGGRRRRRRRRrrrrrr!";
-    private $nom;
-    private $couleur;
+    public $japper="WWoooooouuuuAAAAFFF";
+    public $Grognier="GRGGRRRRRRRRrrrrrr!";
+    public $nom;
+    public $couleur;
 
-    function Japper($japper){
-        echo $japper;
+    function Japper(){
+        echo $this->japper.'<br>';
         $this->energieChien -= 40;
         if($this->energieChien<=0)
         {
-            echo'<br>'.$this->dormir;
+            echo "Énergie= 0<br>";
             $this->dormir();
-            echo $this->energieChien;
+
         }
+        echo "Énergie= ".$this->energieChien.'<br>';
     }
     function Grognier($Grognier){
-        echo $Grognier;
+        echo $Grognier.'<br>';
         $this->energieChien -= 40;
         if($this->energieChien<=0)
         {
+            echo "Énergie= 0<br>";
             $this->dormir();
-            echo'<br>'.$this->dormir;
-            echo $this->energieChien;
+
         }
+        echo "Énergie= ".$this->energieChien.'<br>';
     }
 }
  $chat1 = new chat();
  $chat2 = new chat();
  $chien1 = new chien();
- $chien2 = new chat();
- $chien3 = new chat();
-
- //Nom chat et chien
+ $chien2 = new chien();
+ $chien3 = new chien();
 
 
- $chien1->$nom;
+$chat1->miauler();
+$chat1->miauler();
+$chat1->miauler();
 
-echo '<br> Je mappel $chien1->$nom';
+$Chien1->Japper();
+$Chien1->Japper();
+$Chien1->Japper();
+
+
 
 ?>
 </body>
